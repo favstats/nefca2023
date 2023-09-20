@@ -1,8 +1,8 @@
 ---
 title: "Unveiling the Black Box"
-subtitle: "Researching Political Microtargeting in the Digital Age"
+subtitle: "Researching Online Political Microtargeting"
 author: "<b>Fabio Votta</b> <i>(University of Amsterdam)</i>"
-date: '&nbsp;`r icons::icon_style(icons::fontawesome("link"),fill="black")`&nbsp;favstats.github.io/nefca2023 (Slides) <br> &nbsp;`r icons::icon_style(icons::fontawesome("twitter"),fill="blue")`&nbsp;favstats <br> &nbsp;`r icons::icon_style(icons::fontawesome("mastodon"),fill="#615ff7")`&nbsp;favstats@fosstodon.org &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21st September 2023 - Media Psychology Day NeFCA 2023 '
+date: '&nbsp;`r icons::icon_style(icons::fontawesome("link"),fill="black")`&nbsp;favstats.github.io/nefca2023 (Slides) <br> &nbsp;`r icons::icon_style(icons::fontawesome("twitter"),fill="blue")`&nbsp;favstats <br> &nbsp;`r icons::icon_style(icons::fontawesome("mastodon"),fill="#615ff7")`&nbsp;favstats@fosstodon.org <br> &nbsp;`r icons::icon_style(icons::fontawesome("square", style = "solid"),fill="#0085ff")`&nbsp;favstats &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 21st September 2023 - Media Psychology Day NeFCA 2023 '
 output:
   xaringan::moon_reader:
     css: [ascor.css, default]
@@ -49,6 +49,143 @@ overview_day <- readRDS("../../../phd/codebase/algo_ads/data/overview_day.rds")
 
 ---
 
+# Roadmap
+
+
+1. Introduction to Political Microtargeting
+
+2. Platform-centric methods
+
+  + Toxic Microtargeting
+  
+      + I. APIs
+    
+      + II. Scraping
+    
+3. User-centric methods
+
+  + Collaboration with Who Targets Me
+
+      + III. Tracking users (with browser apps) 
+    
+  + Algorithm Audit Study with Dutch political parties
+  
+      + IV. Data donation approach
+    
+4. Q & A
+
+---
+
+class: center, middle, white
+
+# Slides: favstats.github.io/nefca2023
+
+<img src="https://media.tenor.com/YuaZwKZxXgoAAAAM/write-that-down-taking-notes.gif" width = "60%">
+
+---
+
+class: center, middle, white
+
+.pull-left[
+
+<br>
+<br>
+<br>
+<br>
+
+### Who do you think this ad is targeted at?
+
+]
+
+.pull-right[
+
+
+![](img/example1.png)
+
+]
+
+
+---
+
+class: center, middle, white
+
+.pull-left[
+
+<br>
+<br>
+<br>
+<br>
+
+### Who do you think this ad is targeted at?
+
+
+#### Men, 36-65+ year old, Noord-Holland, Zuid-Holland, Noord Brabant, and Gelderland, 11,191 people
+
+
+*maybe: **excluded** people interested in veganism, green building*, ***included*** *college educated people interested in politics*
+
+
+]
+
+.pull-right[
+
+
+![](img/example1.png)
+
+]
+
+
+---
+
+class: center, middle, white
+
+.pull-left[
+
+<br>
+<br>
+<br>
+<br>
+
+### Who do you think this ad is targeted at?
+
+]
+
+.pull-right[
+
+
+![](img/example2.png)
+
+]
+
+
+---
+
+class: center, middle, white
+
+.pull-left[
+
+<br>
+<br>
+<br>
+<br>
+
+### Who do you think this ad is targeted at?
+
+#### Women, 18-34 year old, Noord-Holland, Zuid-Holland, Noord Brabant, 1,975 people
+
+
+]
+
+.pull-right[
+
+
+![](img/example2.png)
+
+]
+
+
+
+---
 
 ## What is political microtargeting?
 
@@ -59,18 +196,22 @@ What does more "susceptible" mean?
 
 Expectation that it is more *effective*
 
+--
+
 Based on congruency between recipient and message:
 
 + **congruency** theory (Aker 1999)
 
++ the main idea is:
 
-TODO:
+  + people pay more attention when messages align with self-concept of receiver
+  
+  + when paying more attention they may have greater impact (Petty and Cacioppo 1986; Wheeler, DeMarree, and Petty 2008)
+  
 
-1. Hook
-2. effects of microtargeting
 ---
 
-## Types of Microtargeting
+## (Some) Types of Microtargeting
 
 + *behavioral targeting* (Dobber et al. 2019)
   
@@ -90,13 +231,38 @@ TODO:
 
   + people who care about climate change, economy, abortion rights
   
+
+
+---
+
+
+### Effectiveness
+
+
++ In (field) experiments, tentative evidence suggests that microtargeted political ads are indeed effective (Dobber et al., 2020; Dobber
+et al., 2023; Endres, 2020; Krotzek, 2019; Tappin et al., 2023; Zarouali et al., 2022).
+
+
++ messages about abortion rights were most **effective in increasing vote share of women in competitive congressional districts** (Haenschen, 2022)
+
++ Krotzek (2019) and Zarouali et al. (2022) find that political ads tailored to match personality traits **enhance positive feelings towards candidates and increase persuasiveness**
+
 --
 
-+ *algorithmically enhanced microtargeting* (König 2020)
+.pull-left[
 
-  + algorithms determine which ads are most "relevant" for each group
+![](https://media.tenor.com/UniGtspR-BcAAAAC/damage-thats-a-lot-of-damage.gif)
 
 
+]
+
+--
+
+.pull-right[
+
+however: see also Coppock et al., 2020; Decker and Krämer, 2023 for more mixed findings
+
+]
 
 ---
 
@@ -142,15 +308,13 @@ class: white
 
 - Digital campaigns reach vast audiences quickly
 
-- Analytics refine ad performance
+<br>
 
 **2. Accessibility**
 
 - Microtargeting techniques available even for budget-limited campaigns
 
 - Use of platform-provided data and own contact lists
-
-- Specialized ad delivery algorithms
 
 ]
 
@@ -164,7 +328,9 @@ class: white
   + detailed demographics (age, gender, education, etc.)
   + users "interests" 
   + behavioral targeting 
-  + custom and lookalike Audiences
+  + custom and lookalike audiences
+  
+(***Focus of this presentation***)
 
 **Google** only allows limited targeting 
   + age, gender, location 
@@ -192,8 +358,59 @@ class: white
 
 ---
 
+class: center, middle, white
+
+## Studying Social Media in the *Post-API Age*
+
+<img src="https://i.guim.co.uk/img/media/3aab8a0699616ac94346c05f667b40844e46322f/0_123_5616_3432/master/5616.jpg?width=620&dpr=2&s=none" width="60%">
+
+---
+
+class: center, middle, white
+
+![](https://imageio.forbes.com/specials-images/imageserve/6097d7ee81957044af68d9ce/0x0.jpg?format=jpg&width=1200)
+
+---
+
+class: center, middle, white
+
+![](img/gYktqcsiAnhoXz74wM4rKC.jpg)
+
+---
+
+class: white
+
+## Studying Social Media in the *Post-API Age*
+
+.pull-left[
+  
+Ohme et al. (2023) define two approaches:
+  
+1. platform-centric
+
+  I. Application Programming Interfaces (APIs)
+  
+  II. Scraping (Freelon, 2018)
+
+2. user-centric
+
+  III. Tracking (via browser apps)
+  
+  IV. Data donation (asking users to share data)
+
+  
+]
 
 
+.pull-right[
+
+![](img/ohme.png)
+
+]
+
+
+
+---
 
 class: center, middle, white
 
@@ -313,16 +530,18 @@ class: white
 
 ## Measurement
 
-+ Dependent Variable: Toxicity (Perspective API)
-      
-+ Independent Variable: Potential Reach (*Targeting Granularity*)
 
++ Independent Variable: Toxicity (Perspective API)
+
++ Dependent Variable: Potential Reach (*Targeting Granularity*)
+
+      
 > `Potential Reach` estimates how many people your ad could potentially reach depending on the targeting and ad placement options you select while creating an ad. ~Facebook Ad Library
 
 --
 
 .pull-left[
-+ 100 - 1.000 individuals reached
++ 100 - 1.000 audience size
 + 1.001 - 5.000
 + 5.001 - 10.000
 + 10.001 - 50.000
@@ -353,9 +572,88 @@ class: white
 
 ---
 
+
+class: white
+
+## Results
+
+![](img/toxres1.png)
+
+---
+
+
+class: white
+
+## Results
+
+![](img/toxres2.png)
+
+---
+
+class: white
+
+## Results
+
+![](img/toxres3.png)
+
+---
+
+class: white
+
+## Results
+
+![](img/toxres4.png)
+
+H1a *confirmed*: official campaigns microtarget toxic ads  
+
+H2a *mixed*: outside groups more likely to broadly target toxic ads
+
+---
+
+
 class: center, middle
 
-## Deeper Dive into Methods
+## Deep Dive into Methods
+
+### Platform-centric approaches
+
+#### I. APIs
+
+---
+
+### I. APIs
+
+
+.pull-left[
+
++ Upsides
+
+  + Official avenue to retrieve data
+  
+  + Documentation
+  
+  + Easier access
+  
+  + In theory: consistent data formats
+
+  + Reproducibility  
+
+]
+
+.pull-right[
+
++ Downsides
+
+  + Reliance on platforms
+  
+  + May not have the right data
+  
+  + Rate limiting: don't allow you to retrieve data at scale
+  
+  + Costs
+
+]
+
 
 ---
 
@@ -390,6 +688,8 @@ class: white
   + A **verified** Meta Developer account (i.e. you need to send in your ID to confirm identity 🤔)
   
   + The steps are outlined here: https://www.facebook.com/ads/library/api/
+  
+  + R package to access API: [`Radlibrary`](https://github.com/facebookresearch/Radlibrary)
 
 ]
 
@@ -443,8 +743,34 @@ class: center, white
 
 ---
 
+### II. Scraping
+
+.pull-left[
+
++ Upsides
+
+  + Get the data you want
+  
+  + Your skillset is the limit
+
+]
+
+.pull-right[
+
++ Downsides
+
+  + Grey area (probably goes against terms of service)
+  
+  + Custom solutions require the necessary skillset
+  
+  + Access unofficial and might be shut down at any point
+  
+  + Problem for Reproducibility
+
+]
 
 
+---
 
 class: white
 
@@ -510,13 +836,6 @@ knitr::include_graphics("https://github.com/favstats/metatargetr/raw/master/man/
 
 This has allowed me to create election dashboards
 
-![](img/ps2023.png)
-
-[Blog Post](https://www.favstats.eu/post/provincial_elections/)
-
-]
-
-.pull-right[
 
 + 🇸🇪 [2022 Swedish general election](https://favstats.github.io/SwedishElection2022/)
 + 🇺🇸 [2022 United States midterm elections](https://whotargetsme.github.io/midterms2022_dashboard/) 
@@ -533,6 +852,19 @@ This has allowed me to create election dashboards
 + 🇲🇪 [2023 Montenegrin parliamentary elections](https://favstats.github.io/2023MontenegrinParliamentaryElection/) 
 + 🇳🇱 [2023 Dutch parliamentary elections](https://favstats.github.io/TK2023/) 
 + 🇺🇸 [2024 US Presidential Primaries](https://favstats.github.io/USprimaries2024/)
+
+
+
+
+]
+
+.pull-right[
+
+
+![](img/ps2023.png)
+
+[Blog Post](https://www.favstats.eu/post/provincial_elections/)
+
 
 ]
 
@@ -609,9 +941,6 @@ class: white
 
 + Detect emotions in music, speech or color schemes (Mendoza 2023, work in progress)
 
-![](img/thingstodo.png)
-
-
 ---
 
 class: white, middle, center
@@ -619,8 +948,6 @@ class: white, middle, center
 ## Optical Character Recognition (OCR)
 
 ![](img/xxaas.png)
-
-
 
 ---
 
@@ -733,7 +1060,7 @@ class: middle, center, white
 class: white
 
 
-## peRspective R package
+### peRspective R package
 
 ![](img/perspective.png)
 
@@ -771,6 +1098,11 @@ prsp_score(`
 
 
 
+> Don't forget to validate outputs of this measurement!
+
+See: van Atteveldt et al. (2021); Chan et al. (2021)
+
+
 ]
 
 .pull-right[
@@ -786,23 +1118,18 @@ prsp_score(`
 ## Takeaways
 
 
-+ Political microtargeting allows campaigns to deliver customized messages to specific groups expected to be more susceptible to them. 
++ Official APIs are not dead.. 
 
-  + It aims to increase message effectiveness through congruency between recipient and message.
+  + but often have limited data
+  
+  + can be taken away at a whim
+  
 
-+ Microtargeting techniques include behavioral, psychographic, issue-based and algorithmic targeting. 
++ Scraping remains important
 
-   + Online platforms like Meta allow for more advanced targeting compared to platforms like Google.
-   
-+ Negative campaigning or "going negative" is common, but can backfire. 
-  + Microtargeting may reduce this risk by confining toxic messages to receptive groups.
-
-+ Analyzing ads from the Meta Ad Library API shows that microtargeted ads tend to be more toxic, supporting the idea that campaigns use targeting to safely unleash negativity.
-
-+ Tools like metatargetr and peRspective enable downloading ad creatives and scoring toxicity, opening up new research avenues.
-
-
-+ Overall, political microtargeting facilitates effectively matching recipients to toxic message content, raising ethical questions about manipulation, transparency and accountability.
+  + However: high hurdle to implement
+  
+  + Hopefully tools like `metatargetr` can reduce  that burden
 
 
 ---
@@ -813,6 +1140,40 @@ class: center, middle
 ### Targeting during 2021 German Bundestag elections
 
 #### Collaboration with Who Targets Me
+
+
+##### User-centric approaches
+
+--
+
+##### III. Tracking Users
+
+---
+
+
+### III. User Tracking
+
+
+.pull-left[
+
++ Upsides
+
+  + Study effects on users
+  
+  + Users just have to install tracking app and go
+
+]
+
+.pull-right[
+
++ Downsides
+
+  + Biased samples (who is more likely to install an app?)
+  
+  + Creation of tracker software
+
+]
+
 
 ---
 
@@ -839,7 +1200,9 @@ class: white
 
 .pull-left[
 
-+ ZDF Magazin Royale collaborates with Who Targets Me (April 2021)
++ ZDF Magazin Royale collaborates with Who Targets Me (April 2021) 
+
+  + German equivalent of *De Avondshow met Arjen Lubach*
 
 + 17k users in Germany sign up with WTM in the next months
 
@@ -949,112 +1312,99 @@ class: white
 
 ### Weighting the data 
 
-#### according to German population metrics
+#### according to German population metrics (using `pewmethods`)
 
 <img src="img/gender_weighted.png" width="50%" height="50%">
 
 
----
-
-
-
-class: white
-
-### How common is targeting anyway?
-
-
-<img src="https://pbs.twimg.com/media/FAI_L3TXMAA192x?format=png&name=4096x4096" width="80%" height="80%">
-
-
-.rightcol30[
-
-Link to Shiny app to explore results:
-
-[favstats.shinyapps.io/btw21_wtm/](https://favstats.shinyapps.io/btw21_wtm/)
-
-]
+Link to Shiny app to explore results: [favstats.shinyapps.io/btw21_wtm/](https://favstats.shinyapps.io/btw21_wtm/)
 
 
 
 ---
 
-class: white
+<!-- class: white -->
 
-### Targeting Networks - CDU
+<!-- ### How common is targeting anyway? -->
 
-![](img/targeting_network_cdu.png)
-
-
----
-
-class: white
-
-### Targeting vaccine skeptic content
-
-.pull-left[
-
-<img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%">
-
-]
-
-.pull-right[
-<img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehmad.png" width="70%" height="70%">
-]
-
----
-
-class: white
-
-### Targeting vaccine skeptic content
-
-.pull-left[
-
-<img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%">
-
-]
+<!-- <img src="https://pbs.twimg.com/media/FAI_L3TXMAA192x?format=png&name=4096x4096" width="80%" height="80%"> -->
 
 
-.pull-right[
-> I myself am neither a fanatical opponent of vaccination nor a supporter of it: because the main successes against this virus take place in our immune systems anyway, when they - spared from stress and environmental damage - fend off germs and cause an inconspicuous infection process.
-]
+<!-- --- -->
+
+### Now what can we do with this (weighted) data?
+
+We could study
+
++ **Voter turnout**: Ads might motivate or demotivate certain demographics from participating in the election.
 
 
----
++ **Shift in voting intent**: Exposure to certain ads might make voters reconsider their choice.
 
-class: white
-
-## Attack Ads - CDU
-
-.pull-left[
-This CDU ad is targeted at 
-
-+ small business owners
-+ interest in business management
-+ female entrepreneurs
-+ start-ups
-+ “The Economist” 
-+ entrepreneurship
-]
-
-.pull-right[
-
-<img src="https://whotargets.me/wp-content/uploads/2021/09/cdu.png" width="50%" height="50%">
++ **Misinformation**: Microtargeted ads might spread misleading or false information tailored to specific demographics, influencing perceptions.
 
 
-]
++ **Polarization**: Specific ads might increase division and animosity between groups, especially when they focus on contentious issues.
+
+
+
+
+
+<!-- --- -->
+
+<!-- class: white -->
+
+<!-- ### Targeting Networks - CDU -->
+
+<!-- ![](img/targeting_network_cdu.png) -->
+
+
+<!-- --- -->
+
+<!-- class: white -->
+
+<!-- ### Targeting vaccine skeptic content -->
+
+<!-- .pull-left[ -->
+
+<!-- <img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%"> -->
+
+<!-- ] -->
+
+<!-- .pull-right[ -->
+<!-- <img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehmad.png" width="70%" height="70%"> -->
+<!-- ] -->
+
+<!-- --- -->
+
+<!-- class: white -->
+
+<!-- ### Targeting vaccine skeptic content -->
+
+<!-- .pull-left[ -->
+
+<!-- <img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%"> -->
+
+<!-- ] -->
+
+
+<!-- .pull-right[ -->
+<!-- > I myself am neither a fanatical opponent of vaccination nor a supporter of it: because the main successes against this virus take place in our immune systems anyway, when they - spared from stress and environmental damage - fend off germs and cause an inconspicuous infection process. -->
+<!-- ] -->
+
 
 
 ---
 
 ## Takeaways
 
-+ Data donation studies may require weighting because of self-selection bias
++ Tracking studies may require weighting because of self-selection bias
 
   + R package `pewmethods` can help create weights
 
 + Who Targets Me helps create transparency around elections
 
-  + they are very open to research and can be approached if you would like to conduct studies
+  + they are very open to research and can be approached if you would like to conduct studies with them
 
 ---
 
@@ -1065,6 +1415,8 @@ class: white. middle, center
 # in Political Microtargeting
 
 ![](https://media3.giphy.com/media/3o6Yg4GUVgIUg3bf7W/giphy.gif)
+
+(*IV. Data Donation + Algorithm Audit Study*)
 
 ---
 
@@ -1200,6 +1552,22 @@ knitr::include_graphics("img/relevant_quote.png")
 
 ---
 
+### A (silly) example
+
+.pull-left[
+    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1465341854i/12111823.jpg" width = "60%">
+]
+
+--
+
+.pull-right[
+    ![](img/fsnow.png)
+F. Snow, obsessed with A Song of Ice and Fire
+]
+
+
+---
+
 
 ### Pricing differences in the US 2020 election
 
@@ -1219,19 +1587,19 @@ knitr::include_graphics("img/older.png")
 ---
 
 
-### Prior Research into Ad Delivery Algorithms
+<!-- ### Prior Research into Ad Delivery Algorithms -->
 
-**Job ads and Housing**
+<!-- **Job ads and Housing** -->
 
-* Discrimination in Online Ad Delivery [(Sweeney, 2013)](https://doi.org/10.1145/2460276.2460278) 
+<!-- * Discrimination in Online Ad Delivery [(Sweeney, 2013)](https://doi.org/10.1145/2460276.2460278)  -->
 
-* Algorithmic bias? An empirical study of apparent gender-based discrimination in the display of stem career ads [(Lambrecht and Tucker, 2019)](https://doi.org/10.1287/mnsc.2018.3093) 
+<!-- * Algorithmic bias? An empirical study of apparent gender-based discrimination in the display of stem career ads [(Lambrecht and Tucker, 2019)](https://doi.org/10.1287/mnsc.2018.3093)  -->
 
-* Auditing Race and Gender Discrimination in Online Housing Market [(Asplund et al., 2020)](https://ojs.aaai.org/index.php/ICWSM/article/view/7276) 
+<!-- * Auditing Race and Gender Discrimination in Online Housing Market [(Asplund et al., 2020)](https://ojs.aaai.org/index.php/ICWSM/article/view/7276)  -->
 
-* Auditing for Discrimination in Algorithms Delivering Job Ads [(Imana et al., 2021)](https://ant.isi.edu/datasets/addelivery/Discrimination-Job-Ad-Delivery.pdf) 
+<!-- * Auditing for Discrimination in Algorithms Delivering Job Ads [(Imana et al., 2021)](https://ant.isi.edu/datasets/addelivery/Discrimination-Job-Ad-Delivery.pdf)  -->
 
----
+<!-- --- -->
 
 
 
@@ -2004,7 +2372,20 @@ H3: Party with greatest audience did not reach more or get cheaper prices
 
 ---
 
+### Limitations
 
++ Only three political parties
+
++ Study first-of-its-kind
+
+  + needs more research!
+  
++ Relevance might need to be measured differently?
+
++ We do not vary content.. although studies suggest this is important (Ali et al. 2021, 2022)
+
+
+---
 
 ### Implications
 
