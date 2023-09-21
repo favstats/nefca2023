@@ -626,6 +626,7 @@ class: center, middle
 
 ---
 
+
 ### I. APIs
 
 
@@ -750,7 +751,16 @@ class: center, white
 
 ---
 
+
 ### II. Scraping
+
+![](https://miro.medium.com/v2/resize:fit:550/0*Bj_O1jRFzZjKxzi4.jpg)
+
+---
+
+### II. Scraping
+
+
 
 .pull-left[
 
@@ -1182,7 +1192,36 @@ class: center, middle
 
 ##### III. User Tracking
 
+
 ---
+
+class: white
+
+## Who Targets Me - Tracking users to see how they are tracked
+
+.pull-left[
+![](https://whotargets.me/wp-content/uploads/2020/06/wtm_logo_2020.png)
+
+]
+
+.pull-right[
+![](https://whotargets.me/wp-content/uploads/2021/04/Screenshot-2021-04-30-at-09.49.54.png)
+]
+
+---
+
+class: white
+
+## Why Am I Seeing This
+
++  WTM scrapes the text from the ‘Why am I seeing this?’ label
+
+![](https://www.impactplus.com/hubfs/Screen%20Shot%202019-07-15%20at%202.11.21%20PM.png)
+
+
+
+---
+
 
 
 ### III. User Tracking
@@ -1219,22 +1258,10 @@ $\color{red}{\text{Downsides}}$
 ]
 
 
----
-
-class: white
-
-## Who Targets Me
-
-.pull-left[
-![](https://whotargets.me/wp-content/uploads/2020/06/wtm_logo_2020.png)
-
-]
-
-.pull-right[
-![](https://whotargets.me/wp-content/uploads/2021/04/Screenshot-2021-04-30-at-09.49.54.png)
-]
 
 ---
+
+
 
 
 class: white
@@ -1284,17 +1311,6 @@ https://targetleaks.de/
 
 ---
 
-class: white
-
-## Why Am I Seeing This
-
-+  WTM scrapes the text from the ‘Why am I seeing this?’ label
-
-![](https://www.impactplus.com/hubfs/Screen%20Shot%202019-07-15%20at%202.11.21%20PM.png)
-
-
-
----
 
 
 
@@ -1456,17 +1472,29 @@ class: white. middle, center
 ### IV. Data Donation 
 
 
+<img src="img/download.jpg" width="60%">
+
+
+
+
+---
+
+### IV. Data Donation 
+
+
 .pull-left[
 
 $\color{green}{\text{Upsides}}$
 
-  + Study historical record of users
+
+  + non-public data (e.g., private messages, web browsing history)
+
+  + Study (historical) records of users
   
       + over time
   
-  + Completeness of data
+  + Completeness of data (e.g. when using Google Takeout)
   
-  + non-public data (e.g., private messages)
   
 ]
 
@@ -1481,6 +1509,8 @@ $\color{red}{\text{Downsides}}$
   + Very privacy-sensitive data might need to be collected
   
       + how to ensure privacy?
+      
+      + reproducibility?
       
   + data is often less structured or documented
 
