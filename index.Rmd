@@ -49,6 +49,24 @@ overview_day <- readRDS("../../../phd/codebase/algo_ads/data/overview_day.rds")
 
 ---
 
+class: white, middle, white
+
+.pull-left[
+
+![](https://pbs.twimg.com/media/F4yspBJXwAEziim?format=png&name=900x900)
+
+
+]
+
+.pull-right[
+
+![](https://pbs.twimg.com/media/F4y52W0XwAAM4rp?format=jpg&name=large)
+
+]
+
+
+---
+
 # Roadmap
 
 
