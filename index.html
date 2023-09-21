@@ -191,7 +191,7 @@ Expectation that it is more *effective*
 
 Based on congruency between recipient and message:
 
-+ **congruency** theory (Aker 1999)
++ **congruency** theory (Aaker 1999)
 
 + the main idea is:
 
@@ -214,7 +214,7 @@ Based on congruency between recipient and message:
 
   + matching a person's personality (like their degree of extraversion) to the content of an ad can increase an ad's persuasive power and increase the clicks and conversions it generates (Moon 2002, Wheeler 2008)
   
-  +  Nai et al. (2020) show that uncivil attack ads are most effective in lowering perceptions of the attacked politician when the receiver of the message scores high on psychopathy
+  +  Nai and Maier (2020) show that uncivil attack ads are most effective in lowering perceptions of the attacked politician when the receiver of the message scores high on psychopathy
   
 --
 
@@ -409,6 +409,8 @@ class: center, middle, white
 
 ![](img/toxic.png)
 
+
+
 ---
 
 ### Going Negative
@@ -441,12 +443,15 @@ There is a *negativity bias* in human information processing that draws more att
 .pull-left[
 
 
-+ However, negative ads can also **backfire** (***backlash effect***) 
-  + generate sympathy for the target
-  + reduce attitudes towards the attacker (Garramone 1984; Walter &amp; van der Eijk, 2019)
++ However, negative ads can also **backfire**, i.e. ***backlash effect*** (Garramone 1984; Walter &amp; van der Eijk, 2019)
 
-+ Negative campaigning is seen as undesirable and harmful by the public
-    + (Mutz and Reeves 2005; Mattes and Redlawsk 2014)
+
+  + generate sympathy for the target
+  
+  
+  + reduce attitudes towards the attacker 
+
+
 
 + So when should campaigns "go negative"? 
 
@@ -595,9 +600,9 @@ class: white
 
 ![](img/toxres4.png)
 
-H1a: confirmed
+H1a *confirmed*: official campaigns microtarget toxic ads  
 
-H2a: mixed
+H2a *mixed*: outside groups more likely to broadly target toxic ads
 
 ---
 
@@ -615,9 +620,11 @@ class: center, middle
 ### I. APIs
 
 
+
+
 .pull-left[
 
-+ Upsides
+`\(\color{green}{\text{Upsides}}\)`
 
   + Official avenue to retrieve data
   
@@ -625,7 +632,7 @@ class: center, middle
   
   + Easier access
   
-  + Mostly consistent data formats
+  + In theory: consistent data formats
 
   + Reproducibility  
 
@@ -633,7 +640,7 @@ class: center, middle
 
 .pull-right[
 
-+ Downsides
+`\(\color{red}{\text{Downsides}}\)`
 
   + Reliance on platforms
   
@@ -641,7 +648,7 @@ class: center, middle
   
   + Rate limiting: don't allow you to retrieve data at scale
   
-  + Costs
+  + Potential Costs
 
 ]
 
@@ -738,7 +745,7 @@ class: center, white
 
 .pull-left[
 
-+ Upsides
+`\(\color{green}{\text{Upsides}}\)`
 
   + Get the data you want
   
@@ -748,7 +755,7 @@ class: center, white
 
 .pull-right[
 
-+ Downsides
+`\(\color{red}{\text{Downsides}}\)`
 
   + Grey area (probably goes against terms of service)
   
@@ -1113,6 +1120,13 @@ See: van Atteveldt et al. (2021); Chan et al. (2021)
   + Hopefully tools like `metatargetr` can reduce  that burden
 
 
+
++ `peRspective` can help with analyzing text data
+
+  + However: important to validate for your use-case!
+    
+
+
 ---
 
 
@@ -1123,7 +1137,48 @@ class: center, middle
 #### Collaboration with Who Targets Me
 
 
-##### III. Tracking Users
+##### User-centric approaches
+
+--
+
+##### III. User Tracking
+
+---
+
+
+### III. User Tracking
+
+
+.pull-left[
+
+`\(\color{green}{\text{Upsides}}\)`
+
+  + Study effects on users
+  
+      + over time
+  
+  + Users just have to install tracking app
+  
+      + removes the burden from users
+
+]
+
+.pull-right[
+
+`\(\color{red}{\text{Downsides}}\)`
+
+  + Biased samples 
+  
+      + who is more likely to install an app?
+  
+  + Creation of tracker software
+  
+      + who has the necessary skillset for that?
+      
+      + substantial expertise and effort
+
+]
+
 
 ---
 
@@ -1150,7 +1205,9 @@ class: white
 
 .pull-left[
 
-+ ZDF Magazin Royale collaborates with Who Targets Me (April 2021)
++ ZDF Magazin Royale collaborates with Who Targets Me (April 2021) 
+
+  + German equivalent of *De Avondshow met Arjen Lubach*
 
 + 17k users in Germany sign up with WTM in the next months
 
@@ -1192,7 +1249,7 @@ class: white
 
 ## Why Am I Seeing This
 
-+  WTM users share the text from the ‘Why am I seeing this?’ label
++  WTM scrapes the text from the ‘Why am I seeing this?’ label
 
 ![](https://www.impactplus.com/hubfs/Screen%20Shot%202019-07-15%20at%202.11.21%20PM.png)
 
@@ -1262,10 +1319,40 @@ class: white
 
 #### according to German population metrics (using `pewmethods`)
 
-&lt;img src="img/gender_weighted.png" width="50%" height="50%"&gt;
+
+.pull-left[
+
+![](img/gender_weighted.png)
+
+
+]
+
+
+.pull-right[
+
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+
+&lt;br&gt;
+
+
+&lt;br&gt;
+
+
+&lt;br&gt;
+
+
+&lt;br&gt;
 
 
 Link to Shiny app to explore results: [favstats.shinyapps.io/btw21_wtm/](https://favstats.shinyapps.io/btw21_wtm/)
+
+
+]
+
 
 
 
@@ -1295,53 +1382,6 @@ We could study
 + **Polarization**: Specific ads might increase division and animosity between groups, especially when they focus on contentious issues.
 
 
-
-
-
-&lt;!-- --- --&gt;
-
-&lt;!-- class: white --&gt;
-
-&lt;!-- ### Targeting Networks - CDU --&gt;
-
-&lt;!-- ![](img/targeting_network_cdu.png) --&gt;
-
-
-&lt;!-- --- --&gt;
-
-&lt;!-- class: white --&gt;
-
-&lt;!-- ### Targeting vaccine skeptic content --&gt;
-
-&lt;!-- .pull-left[ --&gt;
-
-&lt;!-- &lt;img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%"&gt; --&gt;
-
-&lt;!-- ] --&gt;
-
-&lt;!-- .pull-right[ --&gt;
-&lt;!-- &lt;img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehmad.png" width="70%" height="70%"&gt; --&gt;
-&lt;!-- ] --&gt;
-
-&lt;!-- --- --&gt;
-
-&lt;!-- class: white --&gt;
-
-&lt;!-- ### Targeting vaccine skeptic content --&gt;
-
-&lt;!-- .pull-left[ --&gt;
-
-&lt;!-- &lt;img src="https://whotargets.me/wp-content/uploads/2021/08/dieterdehm.png" width="100%" height="100%"&gt; --&gt;
-
-&lt;!-- ] --&gt;
-
-
-&lt;!-- .pull-right[ --&gt;
-&lt;!-- &gt; I myself am neither a fanatical opponent of vaccination nor a supporter of it: because the main successes against this virus take place in our immune systems anyway, when they - spared from stress and environmental damage - fend off germs and cause an inconspicuous infection process. --&gt;
-&lt;!-- ] --&gt;
-
-
-
 ---
 
 ## Takeaways
@@ -1349,10 +1389,15 @@ We could study
 + Tracking studies may require weighting because of self-selection bias
 
   + R package `pewmethods` can help create weights
+  
+  
+&lt;br&gt;
 
 + Who Targets Me helps create transparency around elections
 
-  + they are very open to research and can be approached if you would like to conduct studies with them
+  + they are very open to research
+  
+  + they can be approached if you would like to conduct studies with them
 
 ---
 
@@ -1365,6 +1410,44 @@ class: white. middle, center
 ![](https://media3.giphy.com/media/3o6Yg4GUVgIUg3bf7W/giphy.gif)
 
 (*IV. Data Donation + Algorithm Audit Study*)
+
+---
+
+
+### IV. Data Donation 
+
+
+.pull-left[
+
+`\(\color{green}{\text{Upsides}}\)`
+
+  + Study historical record of users
+  
+      + over time
+  
+  + Completeness of data
+  
+  + non-public data (e.g., private messages)
+  
+]
+
+.pull-right[
+
+`\(\color{red}{\text{Downsides}}\)`
+
+  + Biased samples 
+  
+      + who is more likely to give up data?
+  
+  + Very privacy-sensitive data might need to be collected
+  
+      + how to ensure privacy?
+      
+  + data is often less structured or documented
+
+]
+
+
 
 ---
 
@@ -1692,37 +1775,10 @@ class: center, middle
 
   + this measure is an industry standard
 
-+ Ad delivery share
++ Unique users reached
 
-  + Audience shares measured by % of ads delivered to specific group
+  + this measure is co-linear with the price
   
-  + "How many people were reached in Audience A vs. Audience B"
-  
-  + Pairwise setup which allows us to observe presence and absence of target audience
-  
-     + e.g. ~60% of audience was interested in politics vs. 40% was not
-
-
----
-
-### Within- and between-party comparisons
-
-The study design incorporates two *levels of comparisons*
-
-&lt;br&gt;
-
-Observing differences of **pricing and delivery**:
-
-
-  1. *between parties*
-  
-    + i.e. we expect pricing and delivery to differ by party
-
-  1. *within a party*
-  
-    + i.e. we expect pricing and delivery to differ by audience
-
-
 ---
 
 
@@ -2006,59 +2062,11 @@ class: white
 &lt;img src="img/diffs_single1.png" width="85%" height="85%"&gt;
 
 
-
----
-
-
-class: white
-#### Between-party differences (zoomed in)
-
-.font80[*Exclude economic interests* or *target environmental interests*:&lt;br&gt;VVD reaches fewer people per ad than GL (**~380-450 fewer people**) and pay more (**4-5 cents more**)]
-
-
-.pull-left[
-&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" width="504" /&gt;
-]
-
-
-
-
-.pull-right[
-
-
-
-&lt;img src="index_files/figure-html/unnamed-chunk-13-1.png" width="504" /&gt;
-
-
-]
-
-
 ---
 
 class: center, white, middle
 
 ### Within-party differences
-
----
-
-
-class: white
-
-
-### Within-party differences
-
-
-Let's compare now:
-
-Ad price and ad delivery share of 
-
-+ **higher-educated** vs. **lower-educated** audience
-
-+ Audience **interested in the economy** vs. **not interested**
-
-+ Audience **interested in politics** vs. **not interested**
-
-+ Audience **interested in the environment** vs. **not interested**
 
 ---
 
@@ -2186,6 +2194,17 @@ H3: Party with greatest audience did not reach more or get cheaper prices
   
 ---
 
+
+class: center, middle, white
+
+# Zooming out
+
+
+Hopefully you found the methods, studies, and results in this talk interesting!
+
+
+---
+
 class: center, middle
 
 ## Thank you for your attention! Questions?
@@ -2220,6 +2239,120 @@ Link to presentation: *favstats.github.io/nefca2023*
 
 ---
 
+## Literature
+
+Aaker, J. L. (1999). The Malleable Self: The Role of Self-Expression in Persuasion. Journal of Marketing Research, 36(1), 45–57. https://doi.org/10.1177/002224379903600104
+
+Ali, M., Sapiezynski, P., Bogen, M., Korolova, A., Mislove, A., &amp; Rieke, A. (2019). Discrimination through Optimization: How Facebook’s Ad Delivery Can Lead to Biased Outcomes. Proceedings of the ACM on Human-Computer Interaction, 3(CSCW), 1–30. https://doi.org/10.1145/3359301
+
+Ali, M., Sapiezynski, P., Korolova, A., Mislove, A., &amp; Rieke, A. (2021). Ad Delivery Algorithms: The Hidden Arbiters of Political Messaging. Proceedings of the 14th ACM International Conference on Web Search and Data Mining, 13–21. https://doi.org/10.1145/3437963.3441801
+
+Dobber, T., Trilling, D., Helberger, N., &amp; de Vreese, C. (2019). Spiraling downward: The reciprocal relation between attitude toward political behavioral targeting and privacy concerns. New Media &amp; Society, 21(6), 1212–1231. https://doi.org/10.1177/1461444818813372
+
+Dobber, T., Metoui, N., Trilling, D., Helberger, N., &amp; de Vreese, C. (2020). Do (Microtargeted) Deepfakes Have Real Effects on Political Attitudes? The International Journal of Press/Politics, 26(1), 69–91. https://doi.org/10.1177/1940161220944364
+
+Dobber, T., Trilling, D., Helberger, N., &amp; de Vreese, C. (2023). Effects of an issue-based microtargeting campaign: A small-scale field experiment in a multi-party setting. The Information Society, 39(1), 35–44. https://doi.org/10.1080/01972243.2022.2134240
+
+
+---
+
+## Literature
+
+Chan, C. H., Bajjalieh, J., Auvil, L., Wessler, H., Althaus, S., Welbers, K., ... &amp; Jungblut, M. (2021). Four best practices for measuring news sentiment using ‘off-the-shelf’dictionaries: A large-scale p-hacking experiment. Computational Communication Research, 3(1), 1-27.
+
+Coppock, A., Hill, S. J., &amp; Vavreck, L. (2020). The small effects of political advertising are small regardless of context, message, sender, or receiver: Evidence from 59 real-time randomized experiments. Science Advances, 6(36), eabc4046. https://doi.org/10.1126/sciadv.abc4046
+
+
+Decker, H., &amp; Krämer, N. (2023). Is Personality Key? Persuasive Effects of Prior Attitudes and Personality in Political Microtargeting. Media and Communication, 11(3), 250–261. https://doi.org/10.17645/
+mac.v11i3.6627
+
+Endres, K. (2020). Targeted Issue Messages and Voting Behavior. American Politics Research, 48(2), 317–328. https://doi.org/10.1177/1532673X19875694
+
+Fiske, S. T. (1980). Attention and weight in person perception: The impact of negative and extreme behavior. Journal of Personality and Social Psychology, 38(6), 889–906. https://doi.org/10.1037/0022-3514.38.6.889
+
+
+Freelon, D. (2018). Computational research in the post-API age. Political Communication, 35(4), 665-668.
+
+
+Garramone, G. M. (1984). Voter Responses to Negative Political Ads. Journalism Quarterly, 61(2), 250–259. https://doi.org/10.1177/107769908406100202
+
+
+
+--- 
+
+hi
+
+---
+
+## Literature
+
+Geer, J. G. (2006). In defense of negativity: Attack ads in presidential campaigns. University of Chicago Press.
+
+
+Haenschen, K. (2022). The Conditional Effects of Microtargeted Facebook Advertisements on Voter Turnout. Political Behavior, 1–21. https://doi.org/10.1007/s11109-022-09781-7
+
+
+Hannun, A., Case, C., Casper, J., Catanzaro, B., Diamos, G., Elsen, E., Prenger, R., Satheesh, S., Sengupta, S., Coates, A., &amp; Ng, A. Y. (2014). Deep Speech: Scaling up end-to-end speech recognition. arXiv:1412.5567 [cs]. Retrieved January 30, 2021, from http://arxiv.org/abs/1412.5567
+
+Haselmayer, M. (2019). Negative campaigning and its consequences: A review and a look ahead. French Politics, 17(3), 355–372. https://doi.org/10.1057/s41253-019-00084-8
+
+Hilbig, B. E. (2009). Sad, thus true: Negativity bias in judgments of truth. Journal of Experimental Social Psychology, 45(4), 983–986. https://doi.org/10.1016/j.jesp.2009.04.012
+
+Krotzek, L. J. (2019). Inside the Voter’s Mind: The Effect of Psychometric Microtargeting on Feelings Toward and Propensity to Vote for a Candidate. International Journal of Communication; Vol 13 (2019). https://ijoc.org/index.php/ijoc/article/view/9605
+
+
+Nai, A., &amp; Maier, J. (2020). Is Negative Campaigning a Matter of Taste? Political Attacks, Incivility, and the Moderating Role of Individual Differences. American Politics Research, 49(3), 269–281. https://doi.org/10.1177/1532673X20965548
+
+
+---
+
+## Literature
+
+Moon, Y. (2002). Personalization and Personality: Some Effects of Customizing Message Style Based on Consumer Personality. Journal of Consumer Psychology, 12(4), 313–325. https://doi.org/10.1016/S1057-7408(16)30083-3
+
+
+Mutz, D. C., &amp; Reeves, B. (2005). The New Videomalaise: Effects of Televised Incivility on Political Trust. American Political Science Review, 99(1), 1–15. https://doi.org/10.1017/S0003055405051452
+
+
+Ohme, J., Araujo, T., Boeschoten, L., Freelon, D., Ram, N., Reeves, B. B., &amp; Robinson, T. N. (2023). Digital Trace Data Collection for Social Media Effects Research: APIs, Data Donation, and (Screen) Tracking. Communication Methods and Measures, 1-18.
+
+Petty, R. E., and J. T. Cacioppo. 1986. The elaboration likelihood model of persuasion. Advances in Experimental Social Psychology 19:123–205. doi: 10.1016/S0065-2601(08)60214-2.  
+
+Rozin, P., &amp; Royzman, E. B. (2001). Negativity Bias, Negativity Dominance, and Contagion. Personality and Social Psychology Review, 5(4), 296–320. https://doi.org/10.1207/S15327957PSPR0504_2
+
+
+Sharp, B., Danenberg, N., &amp; Bellman, S. (2018). Psychological targeting. Proceedings of the National Academy of Sciences, 115(34), E7890–E7890. https://doi.org/10.1073/pnas.1810436115
+
+
+Tanusondjaja, A., Michelon, A., Hartnett, N., &amp; Stocchi, L. (2023). Reaching Voters on Social Media: Planning Political Advertising on Snapchat. International Journal of Market Research, 65(5), 566–580. https://doi.org/10.1177/14707853231175085
+
+
+
+
+---
+
+## Literature
+
+
+Tappin, B. M., Wittenberg, C., Hewitt, L. B., Berinsky, A. J., &amp; Rand, D. G. (2023). Quantifying the potential persuasive returns to political microtargeting. Proceedings of the National Academy of Sciences, 120(25), e2216261120. https://doi.org/10.1073/pnas.2216261120
+
+Tufekci, Z. (2014). Engineering the public: Big data, surveillance and computational politics. First Monday. https://doi.org/10.5210/fm.v19i7.4901
+
+
+Van Atteveldt, W., Van der Velden, M. A., &amp; Boukes, M. (2021). The validity of sentiment analysis: Comparing manual annotation, crowd-coding, dictionary approaches, and machine learning algorithms. Communication Methods and Measures, 15(2), 121-140.
+
+
+
+Walter, A. S., &amp; van der Eijk, C. (2019). Unintended consequences of negative campaigning: Backlash and second-preference boost effects in a multi-party context. The British Journal of Politics and International Relations, 21(3), 612–629. https://doi.org/10.1177/1369148119842038
+
+
+Wheeler, S. C., DeMarree, K. G., &amp; Petty, R. E. (2008). A match made in the laboratory: Persuasion and matches to primed traits and stereotypes. Journal of Experimental Social Psychology, 44(4), 1035–1047. https://doi.org/10.1016/j.jesp.2008.03.007
+
+
+Zarouali, B., Dobber, T., De Pauw, G., &amp; de Vreese, C. (2022). Using a Personality-Profiling Algorithm to Investigate Political Microtargeting: Assessing the Persuasion Effects of Personality-Tailored Ads on Social Media. Communication Research, 1066–1091. https://doi.org/10.1177/0093650220961965
+
+
+---
 
 class: center, middle
 
@@ -2249,13 +2382,13 @@ class: white
 ### Within-party differences per day - Reach and Cost
 
 .pull-left[
-&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" width="504" /&gt;
 ]
 
 --
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="504" /&gt;
 ]
 
 
@@ -2300,7 +2433,7 @@ We observe:
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" width="576" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="576" /&gt;
 ]
 
 
@@ -2348,13 +2481,13 @@ class: white
 
 
 .pull-left[
-&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-14-1.png" width="504" /&gt;
 
 
 ]
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-15-1.png" width="504" /&gt;
 
 
 ]
@@ -2392,7 +2525,7 @@ class: white
 
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-20-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-16-1.png" width="504" /&gt;
 ]
 
 
@@ -2418,7 +2551,7 @@ class: white
 --
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
 ]
 
 
@@ -2448,7 +2581,7 @@ class: white
 --
 
 .pull-right[
-&lt;img src="index_files/figure-html/unnamed-chunk-22-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
 ]
 
 ---
@@ -2465,7 +2598,7 @@ class: white
 
 
 .pull-left[
-&lt;img src="index_files/figure-html/unnamed-chunk-23-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
 ]
 
 
@@ -2473,7 +2606,7 @@ class: white
 
 
 
-&lt;img src="index_files/figure-html/unnamed-chunk-25-1.png" width="504" /&gt;
+&lt;img src="index_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
 
 
 ]
